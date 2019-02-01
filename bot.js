@@ -27,7 +27,7 @@ const prefix = "1";
 
 
 client.on('ready', () => {
-  client.user.setGame(` By 67n | 1help `, 'https://www.twitch.tv/7eezi');
+  client.user.setGame(` By 67n | help `, 'https://www.twitch.tv/7eezi');
 console.log('BOT ONLINE');
 });
 

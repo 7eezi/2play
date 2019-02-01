@@ -21,25 +21,15 @@ const gif = require("gif-search");
 const client = new Discord.Client({disableEveryone: true});
 
 const prefix = "1";
-
-
 /////////////////////////
 ////////////////////////
 
 
+
 client.on('ready', () => {
-  console.log(`Hi ${client.user.tag} , This Code by :Speedy `);
-  console.log('')
-  console.log(`i Have  [ " ${client.guilds.size} " ]`);
+  client.user.setGame(` By 67n | 1help `, 'https://www.twitch.tv/7eezi');
+console.log('BOT ONLINE');
 });
-
-
-
-client.on('ready', () => { //playing
-    client.user.setGame(` 67n Music Bot Use : 1help `,'https://www.twitch.tv/faresgameryt');
-    client.user.setStatus('Online')
-});
-
 
 
 
@@ -360,48 +350,5 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
-
-
-
-
-
-
-
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'play')) {
-    client.user.setGame(argresult);
-      message.channel.send("**:white_check_mark: | The Playing Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
-  } else 
-  if (message.content.startsWith(adminprefix + 'wat')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send("**:white_check_mark: | The Watching Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
-  } else 
-  if (message.content.startsWith(adminprefix + 'lis')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send("**:white_check_mark: | The Listening Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
-  } else 
-  if (message.content.startsWith(adminprefix + 't')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/7eezi");
-      message.channel.send("**:white_check_mark: | The Streaming Status Has Been Changed To : ``"
-   + `${argresult}` + "``**")
-  }
-  if (message.content.startsWith(adminprefix + 'name')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'avatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
-
-
-
 
 client.login(process.env.BOT_TOKEN);

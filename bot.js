@@ -22,16 +22,6 @@ const client = new Discord.Client({disableEveryone: true});
 
 const prefix = "1";
 
-const settings = require("./config.json"); 
-
-const initcmd = settings.initcmd;
-
-const id = settings.id;
-
-const developers = id
-
-const adminprefix = initcmd;
-
 
 /////////////////////////
 ////////////////////////
@@ -41,6 +31,13 @@ client.on('ready', () => {
   console.log(`Hi ${client.user.tag} , This Code by :Speedy `);
   console.log('')
   console.log(`i Have  [ " ${client.guilds.size} " ]`);
+});
+
+
+
+client.on('ready', () => { //playing
+    client.user.setGame(` 67n Music Bot Use : 1help `,'https://www.twitch.tv/faresgameryt');
+    client.user.setStatus('Online')
 });
 
 
